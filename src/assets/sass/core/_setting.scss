@@ -1,0 +1,248 @@
+﻿@charset "UTF-8";
+//-----------------------------------------------------
+// setting scss
+//-----------------------------------------------------
+
+
+// 开关设置
+//-----------------------------------------------------
+$lte7:                  false !default; //是否兼容ie6-7(开为：true)
+$filter:                false !default; //是否为ie6-8开启css3滤镜兼容，常用于渐变背景
+$printStyleSwitch:      false !default; //是否开启打印样式
+$borderBoxSwitch:       true !default; //switch:  true为*{box-sizing:border-box;}
+
+
+// font相关
+//-----------------------------------------------------
+$baseFontSize:          13px !default;
+$baseLineHeight:        1.4 !default;
+$bodyBgColor:           #f4f6f9 !default;
+$baseFontFamily:        Helvetica, "Helvetica Neue", Arial, STHeiTi, Arial, sans-serif !default;
+$fontCn:                "SimSun"; //宋体
+$fontEn:                "Helvetica Neue", Helvetica, Arial !default;
+$fontPF:                "PingFang SC","Hiragino Sans GB"; //苹果字体：苹方  苹果丽黑。
+$fontYaHei:             "Microsoft Yahei"; //微软雅黑
+$fontHeiTi:             "SimHei", "Heiti SC"; //黑体
+$fontSY:                "Source Han Sans CN";  //思源黑体
+$fontWQ:                "WenQuanYi Micro Hei"; //文泉驿微米黑
+$fontJsose:             "Microsoft Yahei", "WenQuanYi Micro Hei", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", Roboto,
+                        "新宋体", "Heiti SC", sans-serif; //自定义字体族
+
+// 元素上下间距
+//-----------------------------------------------------
+$baseGap:               20px !default;
+
+
+// 背景色，文本色，边框色，链接色
+//-----------------------------------------------------
+$colorText:             #232323 !default;
+$colorBg:               #fff !default;
+$colorBorder:           #eaeaea !default; //边框颜色
+$colorInput:            #d6d6d6 !default; //边框颜色
+$colorLink:             #ff5c4c !default; // a标签-如果只有一个值则滑过的值为这个值的darken 5%，如果有两个值则第二个值为滑过的值
+$colorPlaceholder:      #cfcfcf !default; // input placeholder color
+$colorDisabled:         #999 #e3e3e3 #dbdbdb !default; // textColor bgColor borderColor
+
+
+// 基本颜色
+// color function : http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html
+// lighten($color, $amount)
+// darken($color, $amount)
+// opacify($color, $amount)
+// mix($color1, $color2[, $amount])
+//-----------------------------------------------------
+$black:                 #000 !default;
+$grayDarker:            #333 !default;
+$grayCor:               #868686 !default;
+$grayDark:              #999 !default;
+$gray:                  #c9c9c9 !default;
+$grayLight:             #f2f2f2 !default;
+$white:                 #fff !default;
+
+$red:                   #f67a6e !default;
+$blue:                  #77b8ff !default;
+$blueDark:              #0064cd !default;
+$orange:                #ff8f38 !default;
+$green:                 #78CD51 !default;
+$yellow:                #f1c500 !default;
+$pink:                  #c3325f !default;
+$purple:                #7a43b6 !default;
+$active:                darken($blue, 8%) !default;
+
+$primary:               #4ea3ff !default;//主色
+$rule:                  #eaeaea !default;//分割线
+
+// link
+//-----------------------------------------------------
+// 如果只有一个值则滑过的值为这个值的darken 5%，如果
+// 有两个值则第二个值为滑过的值
+$linkColor:             #fe7c00 !default;
+
+// scaffolding
+//-----------------------------------------------------
+$textColor:             $grayDarker !default;
+
+// placeholder
+//-----------------------------------------------------
+// 变量分别为：是否输出表单的占位符placeholder样式，文本色
+$placeholder:           true $gray !default;
+
+
+// 交互配色
+// 警告，错误，成功，提示
+//-----------------------------------------------------
+// 每个变量都有三个颜色值，分别为：文本色，背景色，边框色
+$warningColor:          #514721 #FFF6BF #FFD324 !default;
+$errorColor:            #8A1F11 #FBE3E4 #FBC2C4 !default;
+$successColor:          #264409 #E6EFC2 #C6D880 !default;
+$infoColor:             #205791 #D5EDF8 #92CAE4 !default;
+
+
+// radius
+//-----------------------------------------------------
+$borderRadiusBase:      4px !default;
+$borderRadiusLg:        8px !default;
+$baseRadius:            5px !default;
+$smallRadius:           3px !default;
+$maxRadius:             100px !default;
+
+
+// z-index
+//-----------------------------------------------------
+$zIndexplacehold:       -1 !default;
+$zIndexbottom:          0 !default;
+$zIndexone:             1 !default;
+$zIndexborder:          10 !default;
+$zindexDropdown:        99 !default;
+$zindexSidebar:         110 !default;
+$zindexFixedTopbar:     999 !default;
+$zindexTooltip:         1020 !default;
+$zindexAlert:           1030 !default;
+$zindexMax:             1990 !default;
+
+
+//-----------------------------------------------------
+// 框架自定义设置
+//-----------------------------------------------------
+
+//兼容视网膜屏1像素
+$border-t:              -webkit-gradient(linear, left bottom, left top, color-stop(.5, rgba(0, 0, 0, 0)), color-stop(.5, $colorBorder), to($colorBorder));
+$border-b:              -webkit-gradient(linear, left top, left bottom, color-stop(.5, rgba(0, 0, 0, 0)), color-stop(.5, $colorBorder), to($colorBorder));
+$border-l:              -webkit-gradient(linear, right top, left top, color-stop(.5, rgba(0, 0, 0, 0)), color-stop(.5, $colorBorder), to($colorBorder));
+$border-r:              -webkit-gradient(linear, left top, right top, color-stop(.5, rgba(0, 0, 0, 0)), color-stop(.5, $colorBorder), to($colorBorder));
+
+//h1等字体大小
+//------ type.scss
+$iconfont-size:         16px; //iconfont默认大小
+$font-size-h1:          18px; // h1
+$font-size-title:       16px; // h3、h4
+$font-size-title-lg:    17px; // h2  title
+$font-size-sub:         14px; // h5  sub
+$font-size-tips:        12px; // h6  tips
+
+//文本颜色
+//------ type.scss
+//------ grid.scss
+//------ placehold.scss
+$txt-info:              #777;
+$txt-muted:             #bbb;
+$txt-warning:           #ff4222;
+$txt-link:              #00a5e0;
+$txt-feeds:             #314c83;
+
+//header 头部 设置属性
+//------ layout.scss
+$stable-bg:             #f8f8f8; // stable主题背景色
+$default-bg:            #fff; // 默认主题背景色
+$positive-bg:           $primary; // positive主题背景色
+$header-height:         60px; //header高度
+$dropdown-width:        160px; //多列子菜单宽度
+$footer-height:         44px; //footer高度
+$mask-bg:               rgba(0,0,0,.4);
+$input-wrap-bg:         #ebeced;
+
+//sidebar 左侧菜单 设置属性
+//------ layout.scss
+$sidebar-bg:            #2d3037; // sidebar 左侧栏背景颜色
+$sidebar-hover:         #3e4854; // sidebar 左侧栏背景hover颜色
+$positive-ico:          #77808f; // sidebar 左侧栏字体图标颜色
+$positive-txt:          #c9cdd4; // sidebar 左侧栏字体颜色
+$sidebar-width:         180px; //sidebar 左侧宽度
+$sidebar-sm-width:      42px; //sidebar 左侧变小宽度
+$sidebar-min-height:    44px; //sidebar 左侧宽度
+$sidebar-border-width:  3px; //sidebar border宽度
+
+//tab 常规tab
+//------ tabs.scss
+$tab-bg:                #7087a3; // sidebar 左侧栏背景颜色
+$tab-height:            36px; //tab header的高度
+
+//行高
+$line-height-bar:       44px; // bar行高
+
+//内边距
+//------ grid.scss
+//------ whitespace.scss
+//------ layout.scss
+$wrap-padding:          15px; //布局左右距离留白
+$wrap-padding-s:        10px;
+$menu-padding:          18px; //顶部菜单左右边距
+$dropdown-padding:      15px; //顶部多列子菜单
+$panel-padding-w:       15px; //顶部多列子菜单
+$panel-padding-h:       10px; //顶部多列子菜单
+$alert-padding:         15px; //alert的边距
+$table-padding:         10px; //table的边距
+
+//外边距
+//------ type.scss
+$panel-margin-b:        20px; //面板布局
+
+//buttons
+//------ button.scss
+$btn-padding-h:         8px; //按钮高度
+$btn-padding-w:         12px; //按钮宽度
+$btn-color-default:     $gray; //默认颜色
+$btn-color-primary:     $primary; //主色
+$btn-color-success:     $green; //成功颜色
+$btn-color-info:        $blue; //信息颜色
+$btn-color-warning:     $yellow; //警告颜色
+$btn-color-danger:      $red; //危险颜色
+$btn-shadow:            3px; //阴影按钮的距离
+$btn-min-width:         120px; //下拉框最小宽度
+
+//form
+//------ form.scss
+$input-padding-h:         8px; //input高度(padding)
+$input-padding-w:         12px; //input宽度
+$input-height:            38px; // input高度
+$form-top:                42%; //弹窗form的top值
+$check-height:            17px; //input 多选框的高度
+
+//Switch开关
+//------ form.scss
+$switch-bg-on:            #363f4b; // switch背景 on
+$switch-bg-off:           #bdc3c7; // switch背景 off
+$switch-color-on:         $green; // switch颜色 on
+$switch-color-off:        #7f8c9a; // switch颜色 off
+$switch-width:            80px; // switch宽度
+$switch-height:           30px; // switch高度
+
+//actuve时的背景
+//-----  arrowlink.scss
+$active-bg:             #e5e6e7; //选择红包
+$active-opacity:        .5;
+
+//iconfont 字体
+$icon-color:            #8e8e93;
+$icon-arrow:            "\f600";
+$icon-arrowadd:         "\e61d";
+$icon-checked:          "\f601";
+$icon-return:           "\f614";
+$icon-close:            "\f60a";
+$icon-search:           "\f60c";
+
+//侧滑编辑页面设置
+//------ slide-eidt.html
+$slide-max-width:      1000px;
+$slide-min-width:       900px;
+$slide-nav-height:      36px;

@@ -1,0 +1,43 @@
+@import
+
+    "../core/mixin",
+    "../core/setting";
+
+// 文字截断
+
+// 只对英文起作用，以 字母 作为换行依据
+.ui-nowrap-break {
+    word-break: break-all;
+}
+
+// 只对英文起作用，以 单词 作为换行依据
+.ui-nowrap-wrap {
+    word-break: break-word;
+}
+
+// 只对中文起作用，强制换行
+.ui-nowrap-space {
+    word-break: pre-wrap;
+}
+
+.ui-nowrap{
+    @include nowrap;
+}
+
+.ui-nowrap-flex{
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    -webkit-box-flex: 1;
+    height: inherit;
+}
+
+.ui-nowrap-multi{
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}

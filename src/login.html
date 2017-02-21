@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>UIAS-登录 —— 买钢乐</title>
+    <meta name="keywords" content="不锈钢,钢铁,电商">
+    <meta name="description" content="江苏东方不锈钢找货助手">
+
+    <!-- MglUI core CSS -->
+    <link href="./assets/css/mgui.css" rel="stylesheet" charset="utf-8">
+    <link href="./assets/css/style.css" rel="stylesheet" charset="utf-8">
+
+    <!-- HTML5shiv 和 Respond.js IE8支持HTML5 tooltipss和媒体查询 -->
+    <!--[if lt IE 9]>
+        <script src="./assets/js/html5shiv.js"></script>
+        <script src="./assets/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="login-bg">
+    <section id="container">
+        <div class="login-nav">
+            <div class="ui-row inner-1">
+                <div class="ui-col ui-col-50">
+                    <img src="./assets/images/mgl-logo.png">
+                </div>
+                <div class="ui-col ui-col-50 ui-txt-right">
+                    <img src="./assets/images/mgl-phone.png">
+                </div>
+            </div>
+        </div>
+        <div class="login-cnt ui-row inner-1">
+            <div class="ui-col ui-col-50 ui-txt-center">
+                <img src="./assets/images/mgl-login-adv.png">
+            </div>
+            <div class="ui-col ui-col-50">
+                <form id="loginForm" class="login-form" action="#">
+                    <h2 class="login-form-hd">用户登录</h2>
+                    <div class="login-wrap ui-ph18 ui-pw36">
+                        <p class="ui-txt-warning login-err error-prompt">*密码错误</p>
+                        <div class="ui-form-group">
+                            <i class="icon-denglu"></i>
+                            <input type="text" id="account" name="account" class="ui-input-control" onkeydown="getValidate('account')" placeholder="请输入账户">
+                        </div>
+                        <div class="ui-form-group">
+                            <i class="icon-mima54"></i>
+                            <input type="password" id="password" name="password" class="ui-input-control" onkeydown="getValidate('password')" placeholder="请输入密码">
+                        </div>
+                        <!-- <div class="ui-form-group">
+                            <i class="icon-vipcard"></i>
+                            <input type="text" class="ui-input-control" maxlength="6" placeholder="验证码">
+                            <div class="login-code">
+                                <img src="./assets/images/mgl-login-code.png">
+                            </div>
+                        </div> -->
+                        </label>
+                        <button type="submit" class="ui-btn ui-btn-primary ui-btn-lg ui-btn-block ui-mt24 ui-mb12">登录</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="login-footer ui-txt-center">江苏东方不锈钢电子交易中心 ©2010-2016</div>
+    </section>
+</body>
+
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="./assets/js/mgui.js"></script>
+
+<!--表单验证插件-->
+<script src="./assets/lib/validate/jquery.validate.min.js"></script>
+
+<!--表单验证私有js-->
+<script src="./assets/js/validate-script.js"></script>
+
+</html>

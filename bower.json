@@ -1,0 +1,26 @@
+{
+  "name": "bower-zhan",
+  "description": "gulp Bulid Project (http://www.uizph.com)",
+  "main": "gulpfile.js",
+  "authors": [
+    "ZhanPhty"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "bower"
+  ],
+  "homepage": "http://www.uizph.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/_bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^1.12.4",
+    "modernizr": "^3.3.1"
+  }
+}

@@ -1,0 +1,594 @@
+@import
+    "../core/mixin",
+    "../core/setting";
+
+//块form
+.ui-form-inline {
+
+    .ui-form-group {
+        display: inline-block;
+        margin-bottom: 0;
+        vertical-align: middle;
+    }
+}
+
+.ui-form-group {
+    margin-bottom: $input-padding-w + 3;
+
+    label {
+        display: inline-block;
+    }
+
+    input[type="file"] {
+        display: block;
+    }
+
+    &:after {
+        clear: both;
+        display: table;
+        content: " ";
+    }
+
+    &:before {
+        @extend :after;
+    }
+
+    .ui-txt-info {
+        margin-top: 4px;
+    }
+}
+
+.ui-input-control {
+    display: block;
+    width: 100%;
+    height: $input-height;
+    padding: $input-padding-h $input-padding-w;
+    font-size: $baseFontSize + 1;
+    line-height: $baseLineHeight;
+    color: $grayDarker;
+    vertical-align: middle;
+    background-color: $white;
+    border: 1px solid $colorInput;
+    border-radius: $borderRadiusBase;
+
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+
+    &:focus {
+        border: 1px solid darken($blue, 25%);
+        box-shadow: none;
+    }
+
+    &[disabled] {
+        cursor: not-allowed;
+        background-color: $colorBorder;
+    }
+
+    &[readonly] {
+        cursor: not-allowed;
+        background-color: $colorBorder;
+
+        &:focus,
+        &:active {
+            border: 1px solid $colorInput;
+            box-shadow: none;
+        }
+    }
+
+    &.error {
+        border-color: darken($btn-color-danger, 8%);
+    }
+
+    &.valid {
+        border-color: darken($btn-color-success, 12%);
+    }
+}
+
+.ui-has-success .ui-input-control {
+    border-color: darken($btn-color-success, 8%);
+}
+
+.ui-has-error .ui-input-control {
+    border-color: darken($btn-color-danger, 8%);
+}
+
+.ui-has-warning .ui-input-control {
+    border-color: darken($btn-color-warning, 8%);
+}
+
+//水平form
+.ui-label-control {
+    padding: 10px 6px 0 4px;
+}
+
+.ui-label-txt {
+    display: block;
+    width: 100%;
+    min-height: $input-height;
+    padding: $input-padding-h + 1 $input-padding-w;
+    font-size: $baseFontSize + 1;
+    line-height: 1.6;
+    color: $grayDarker;
+}
+
+//带分割先的form
+.ui-split-form {
+
+    .ui-form-group {
+        padding-bottom: $input-padding-w + 3;
+        padding-right: $wrap-padding;
+        padding-left: $wrap-padding;
+        margin-right: -$wrap-padding;
+        margin-left: -$wrap-padding;
+        border-bottom: 1px solid $grayLight;
+    }
+}
+
+.ui-input-round {
+    border-radius: $maxRadius;
+    padding-right: $wrap-padding;
+    padding-left: $wrap-padding;
+}
+
+.ui-input-lg {
+    height: $input-height + 10;
+    padding: $input-padding-h + 4 $input-padding-w + 4;
+    font-size: $baseFontSize + 5;
+    border-radius: $borderRadiusLg;
+}
+
+.ui-input-sm {
+    height: $input-height - 6;
+    padding: $input-padding-h - 2 $input-padding-w - 2;
+    font-size: $baseFontSize - 1;
+    border-radius: $smallRadius;
+}
+
+//功能图标输入框
+.ui-input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+
+    .ui-input-control {
+        width: 100%;
+        display: table-cell;
+
+        &:first-child {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        &:last-child {
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+        }
+
+        &:not(:first-child):not(:last-child) {
+            border-radius: 0;
+        }
+    }
+}
+
+.ui-btn-icon {
+    width: 1%;
+    display: table-cell;
+    white-space: nowrap;
+    vertical-align: middle;
+    font-size: $baseFontSize + 1;
+    font-weight: normal;
+    line-height: 1;
+    text-align: center;
+
+    &:first-child {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right-color: transparent;
+
+        .ui-btn {
+            height: $input-height;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-right-color: transparent;
+        }
+    }
+
+    &:last-child {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        border-left-color: transparent;
+
+        .ui-btn {
+            height: $input-height;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border-left-color: transparent;
+        }
+    }
+
+    i {
+        font-size: $baseFontSize + 5;
+    }
+}
+
+.ui-input-icon {
+    padding: $input-padding-h $input-padding-w;
+    background-color: $colorBorder;
+    border: 1px solid $gray;
+    border-radius: $borderRadiusBase;
+
+    @extend .ui-btn-icon;
+}
+
+.ui-btn-group {
+    display: table-cell;
+}
+
+.ui-input-group-lg > .ui-input-control,
+.ui-input-group-lg > .ui-input-icon,
+.ui-input-group-lg > .ui-btn-icon {
+    height: $input-height + 10;
+    font-size: $baseFontSize + 5;
+
+    .ui-btn {
+        height: $input-height + 10;
+        font-size: $baseFontSize + 5;
+    }
+
+    i {
+        font-size: $baseFontSize + 8;
+    }
+}
+
+.ui-input-group-sm > .ui-input-control,
+.ui-input-group-sm > .ui-input-icon,
+.ui-input-group-sm > .ui-btn-icon {
+    height: $input-height - 6;
+    font-size: $baseFontSize - 1;
+
+    .ui-btn {
+        height: $input-height - 6;
+        font-size: $baseFontSize - 1;
+    }
+
+    i {
+        font-size: $baseFontSize;
+    }
+}
+
+.modal-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    width: 100%;
+    height: 100%;
+    display: none;
+
+    .modal-dialog-clear {
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(20, 20, 20, .4);
+    }
+
+    .ui-form,
+    .ui-form-horizontal,
+    .ui-form-inline {
+        background-color: $white;
+        padding: $wrap-padding * 2 $wrap-padding * 1.4;
+        top: $form-top;
+
+        animation: anFadeTop 0.3s both;
+    }
+
+    .ui-form {
+        @include center(410px);
+    }
+
+    .ui-form-horizontal {
+        @include center(410px);
+    }
+
+    .ui-form-inline {
+        @include center(600px);
+    }
+}
+
+@keyframes anFadeTop {
+    0% {
+        opacity: 0;
+        top: 20%;
+    }
+    100% {
+        opacity: 1;
+        top: $form-top
+    }
+}
+
+//选项框
+.ui-checkbox {
+    display: block;
+    min-height: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+    color: $grayCor;
+
+    input[type="checkbox"],
+    input[type="radio"] {
+        margin-right: 4px;
+
+        &.error {
+            float: left;
+            margin-top: 3px;
+        }
+
+        &.error ~ span {
+            float: left;
+            margin-right: 12px;
+        }
+    }
+}
+
+.ui-radio {
+    @extend .ui-checkbox;
+}
+
+.ui-radioed {
+    input[type="radio"] {
+        position: relative;
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
+        vertical-align: middle;
+        border: 1px solid $grayDark;
+        border-radius: 50%;
+        box-sizing: border-box;
+    }
+}
+
+//Switch开关
+.ui-switch {
+    display: inline-block;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+    width: $switch-width;
+    border-radius: $maxRadius;
+    user-select: none;
+
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    .ui-switch-control {
+        width: 160%;
+        position: relative;
+    }
+
+    & > .ui-switch-on {
+        left: 1px;
+        transition: left .25s;
+
+        label {
+            border: 4px solid $switch-bg-on;
+            background-color: $switch-color-on;
+        }
+
+        .ui-switch-right {
+            background-color: $switch-bg-on;
+            transition: all .5s;
+        }
+    }
+
+    & > .ui-switch-off {
+        left: -62%;
+        transition: left .25s;
+
+        label {
+            border: 4px solid $switch-bg-off;
+            background-color: $switch-color-off;
+        }
+
+        .ui-switch-left {
+            background-color: $switch-bg-off;
+            transition: all .5s;
+        }
+    }
+
+    label {
+        position: relative;
+        cursor: pointer;
+        float: left;
+        border: 4px solid $switch-bg-on;
+        border-radius: 50%;
+        height: $switch-height;
+        width: $switch-height;
+        margin: 0 -21px 0 -14px;
+        padding: 0;
+        vertical-align: middle;
+        z-index: 100;
+
+        transition: all 0.25s;
+    }
+
+    span {
+        cursor: pointer;
+        font-size: $baseFontSize + 2;
+        font-weight: 700;
+        float: left;
+        height: $switch-height;
+        margin: 0;
+        padding-bottom: 6px;
+        padding-top: 5px;
+        position: relative;
+        text-align: center;
+        width: 50%;
+        z-index: 1;
+
+        i {
+            font-size: $baseFontSize + 5;
+        }
+    }
+
+    .ui-switch-left {
+        border-radius: 30px 0 0 30px;
+        background-color: $switch-bg-on;
+        color: $switch-color-on;
+        border-left: 1px solid transparent;
+
+        i {
+            color: $switch-color-on;
+        }
+    }
+
+    .ui-switch-right {
+        border-radius: 0 30px 30px 0;
+        background-color: $switch-bg-off;
+        color: $switch-color-off;
+        border-left: 1px solid transparent;
+
+        i {
+            color: $switch-color-off;
+        }
+    }
+}
+
+//平角开关样式
+.ui-switch-box {
+    border-radius: $baseRadius;
+
+    & > .ui-switch-on {
+
+        label {
+            border: 4px solid $switch-color-on;
+            border-radius: 0 $baseRadius $baseRadius 0;
+        }
+    }
+
+    & > .ui-switch-off {
+
+        label {
+            border: 4px solid $switch-color-off;
+            border-radius: $baseRadius 0 0 $baseRadius;
+        }
+    }
+
+    .ui-switch-left {
+        border-radius: $baseRadius 0 0 $baseRadius;
+        padding-right: 10px;
+    }
+
+    .ui-switch-right {
+        border-radius: 0 $baseRadius $baseRadius 0;
+        padding-left: 10px;
+    }
+}
+
+//disabled
+.ui-switch {
+    &[disabled] {
+
+        span,label {
+            cursor: default;
+        }
+
+        .ui-switch-left {
+            background-color: lighten($switch-bg-on, 40%);
+            color: lighten($switch-color-on, 24%);
+
+            i {
+                color: lighten($switch-color-on, 24%);
+            }
+        }
+
+        .ui-switch-right {
+            background-color: lighten($switch-bg-off, 14%);
+            color: lighten($switch-color-off, 24%);
+
+            i {
+                color: lighten($switch-color-off, 24%);
+            }
+        }
+
+        .ui-switch-on {
+
+            label {
+                border: 4px solid lighten($switch-bg-on, 40%);
+                background-color: lighten($switch-color-on, 24%);
+            }
+        }
+
+        .ui-switch-off {
+
+            label {
+                border: 4px solid lighten($switch-bg-off, 14%);
+                background-color: lighten($switch-color-off, 24%);
+            }
+
+            .ui-switch-left {
+                background-color: $white;
+            }
+        }
+
+        &.ui-switch-box {
+            & > .ui-switch-on {
+                label {
+                    border: 4px solid lighten($switch-color-on, 24%);
+                }
+            }
+
+            & > .ui-switch-off {
+
+                label {
+                    border: 4px solid lighten($switch-color-off, 24%);
+                }
+            }
+        }
+    }
+}
+
+
+.ui-check {
+    position: relative;
+    cursor: pointer;
+    appearance: none;
+    width: $check-height;
+    height: $check-height;
+
+    &:before {
+        content: "";
+        display: block;
+        box-sizing: border-box;
+        position: absolute;
+        top: -1px;
+        width: $check-height;
+        height: $check-height;
+        vertical-align: middle;
+        border: 1px solid $gray;
+        border-radius: 2px;
+    }
+
+    &:checked {
+        &:before {
+            font-family: "iconfont" !important;
+            content: "\e620";
+            display: block;
+            box-sizing: border-box;
+            position: absolute;
+            top: -1px;
+            width: $check-height;
+            height: $check-height;
+            vertical-align: middle;
+            border: 1px solid $blue;
+            border-radius: 2px;
+
+            background-color: $blue;
+            color: #fff;
+            font-size: 15px;
+        }
+    }
+}

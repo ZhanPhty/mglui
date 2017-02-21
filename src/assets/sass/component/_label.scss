@@ -1,0 +1,46 @@
+@import 
+    "../core/mixin",
+    "../core/setting";
+
+.ui-label {
+    @extend .ui-btn;
+    cursor: auto;
+}
+
+.ui-label-default {
+    @extend .ui-btn-default:hover;
+    color: $white;
+}
+
+.ui-label-primary {
+    @extend .ui-btn-primary:hover;
+    color: $white;
+}
+
+.ui-label-success {
+    @extend .ui-btn-success:hover;
+    color: $white;
+}
+
+.ui-label-info {
+    @extend .ui-btn-info:hover;
+    color: $white;
+}
+
+.ui-label-warning {
+    @extend .ui-btn-warning:hover;
+    color: $white;
+}
+
+.ui-label-danger {
+    @extend .ui-btn-danger:hover;
+    color: $white;
+}
+
+.ui-label-round {
+    @extend .ui-btn-round;
+}
+
+.ui-label-sm {
+    padding: $btn-padding-h - 4 $btn-padding-w - 4;
+}

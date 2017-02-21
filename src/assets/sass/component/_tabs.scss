@@ -1,0 +1,80 @@
+@import
+    "../core/mixin",
+    "../core/setting";
+
+.ui-tab {
+    text-align:left;
+}
+
+ul.ui-tab {
+    position:relative;
+
+    &:after {
+        clear: both;
+        display: table;
+        content: " ";
+    }
+
+    &:before {
+        @extend :after;
+    }
+
+    li {
+        float:left;
+        padding: 0 $wrap-padding;
+        cursor:pointer;
+        height: $tab-height;
+        line-height: $tab-height;
+
+        &.active {
+            color: $tab-bg;
+            border-bottom: 3px solid $tab-bg;
+        }
+    }
+}
+
+.ui-tab-hd {
+    position:relative;
+    background-color: $tab-bg;
+    color: $white;
+
+    &:after {
+        clear: both;
+        display: table;
+        content: " ";
+    }
+
+    &:before {
+        @extend :after;
+    }
+
+    ul {
+
+        li {
+            float:left;
+            padding:0 $wrap-padding;
+            cursor:pointer;
+            height: $tab-height;
+            line-height: $tab-height;
+
+            &:hover {
+                background-color: darken($tab-bg, 5%);
+            }
+
+            &.on,
+            &.active {
+                background-color: $white;
+                color: $tab-bg;
+            }
+        }
+    }
+}
+
+.ui-tab-cnt {
+    padding:$wrap-padding;
+
+    &>div:not(:first-child),
+    &>ul:not(:first-child) {
+        display: none;
+    }
+}

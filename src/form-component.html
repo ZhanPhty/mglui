@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>MglUI-表单组件</title>
+    <meta name="keywords" content="不锈钢,钢铁,电商">
+    <meta name="description" content="江苏东方不锈钢找货助手">
+
+    <!-- MglUI core CSS -->
+    <link href="./assets/css/mgui.css" rel="stylesheet" charset="utf-8">
+    <link href="./assets/css/style.css" rel="stylesheet" charset="utf-8">
+    <link href="./assets/lib/artdialog/ui-dialog.css" rel="stylesheet" charset="utf-8">
+
+    <!-- 日期 core CSS -->
+    <link href="./assets/lib/pikaday/Pikaday.css" rel="stylesheet" charset="utf-8">
+
+    <!-- 城市联动 core CSS -->
+    <link href="./assets/lib/cityset/cityset.css" rel="stylesheet" charset="utf-8">
+
+    <!-- HTML5shiv 和 Respond.js IE8支持HTML5 tooltipss和媒体查询 -->
+    <!--[if lt IE 9]>
+        <script src="./assets/js/html5shiv.js"></script>
+        <script src="./assets/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <section id="container">
+        <!--header start-->
+        <header class="ui-header ui-header-positive clearfix">
+            <div class="ui-col ui-col-20"><h2 class="logo" onclick="window.location.href='/'">CRM管理系统</h2></div>
+            <div class="ui-col ui-col-60">
+                <ul class="header-nav-sys">
+                    <li class="active"><i class="ico-crm-sprite ico-crm-sys"></i>CRM</li>
+                </ul>
+            </div>
+            <div class="ui-col ui-col-20">
+                <ul class="top-menu pull-right">
+                    <li>
+                        <a class="menu-down" href="javascript:;"><i class="icon-people"></i>186******75</a>
+                        <div class="dropdown-menu">
+                            <a href="/">退出</a>
+                            <a href="/">退出</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <!--header end-->
+
+                <!--sidebar start-->
+        <div class="ui-sidebar ui-sidebar-positive" id="sidebar-menu">
+            <div class="sidebar-toggle"><i class="icon-sanshuxian"></i></div>
+            <!-- sidebar menu start-->
+            <ul class="sidebar-menu">
+                <li>
+                    <a href="index.html">
+                        <i class="icon-home1"></i>
+                        <span>首页</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="ui-arrowadd" href="javascript:;">
+                        <i class="icon-photogallery"></i>
+                        <span>UI元素</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="general.html"><i class="icon-mac"></i><span>常规</span></a></li>
+                        <li><a href="button.html"><i class="icon-sort"></i><span>按钮</span></a></li>
+                        <li><a href="tabs.html"><i class="icon-keyboard"></i><span>Tab</span></a></li>
+                        <li><a href="iconfont.html"><i class="icon-love"></i><span>字体图标</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="ui-arrowadd" href="javascript:;">
+                        <i class="icon-iconxuexisel"></i>
+                        <span>组件</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="grids.html"><i class="icon-list1"></i><span>网格</span></a></li>
+                        <li><a href="calendar.html"><i class="icon-carlendar"></i><span>日历</span></a></li>
+                        <li><a href="charts.html"><i class="icon-booking"></i><span>图表</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="ui-arrowadd" href="javascript:;">
+                        <i class="icon-bill"></i>
+                        <span>表单</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a class="active" href="form-component.html"><i class="icon-creditcard"></i><span>表单组件</span></a></li>
+                        <li><a href="form-validator.html"><i class="icon-coupon"></i><span>表单验证</span></a></li>
+                        <li><a href="form-wizard.html"><i class="icon-coupon"></i><span>表单向导</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="table.html">
+                        <i class="icon-carlendar"></i>
+                        <span>表格</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="mail.html">
+                        <i class="icon-mail1"></i>
+                        <span>邮件</span>
+                        <span class="ui-badge bg-important">2</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="login.html">
+                        <i class="icon-user"></i>
+                        <span>登录页</span>
+                    </a>
+                </li>
+            </ul>
+            <!-- sidebar menu end-->
+        </div>
+        <!--sidebar end-->
+
+        <section class="main-content">
+            <section class="wrapper">
+                <div class="ui-row">
+                    <div class="ui-col ui-pw15">
+                        <div class="ui-panel">
+                            <div class="ui-panel-header ui-border-b">Inline表单</div>
+                            <div class="ui-panel-body">
+                                <form class="ui-form-inline">
+                                    <div class="ui-form-group ui-mr6">
+                                        <input type="email" class="ui-input-control" placeholder="账户">
+                                    </div>
+                                    <div class="ui-form-group ui-mr6">
+                                        <input type="email" class="ui-input-control" placeholder="密码">
+                                    </div>
+                                    <button type="submit" class="ui-btn ui-btn-success">登录</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ui-row">
+                    <div class="ui-col ui-col-50 ui-pw15">
+                        <div class="ui-panel">
+                            <div class="ui-panel-header ui-border-b">默认表单</div>
+                            <div class="ui-panel-body">
+                                <form class="ui-form">
+                                    <div class="ui-form-group">
+                                        <label class="ui-mb4">账户</label>
+                                        <input type="email" class="ui-input-control" placeholder="请输入账户">
+                                    </div>
+                                    <div class="ui-form-group">
+                                        <label class="ui-mb4">密码</label>
+                                        <input type="email" class="ui-input-control" placeholder="请输入密码">
+                                    </div>
+                                    <div class="ui-form-group">
+                                        <label class="ui-mb4">上传文件</label>
+                                        <input type="file">
+                                    </div>
+
+                                    <div class="ui-checkbox">
+                                        <label>
+                                        <input type="checkbox">同意条款
+                                    </label>
+                                    </div>
+                                    <button type="submit" class="ui-btn ui-btn-info">登录</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-col ui-col-50 ui-pw15">
+                        <div class="ui-panel">
+                            <div class="ui-panel-header ui-border-b">水平表单</div>
+                            <div class="ui-panel-body">
+                                <form class="ui-form-horizontal">
+                                    <div class="ui-form-group">
+                                        <label class="ui-label-control ui-col ui-col-10">账户</label>
+                                        <div class="ui-col-90">
+                                            <input type="email" class="ui-input-control" placeholder="请输入账户">
+                                        </div>
+                                    </div>
+                                    <div class="ui-form-group">
+                                        <label class="ui-label-control ui-col ui-col-10">密码</label>
+                                        <div class="ui-col-90">
+                                            <input type="password" class="ui-input-control" placeholder="请输入密码">
+                                        </div>
+                                    </div>
+                                    <div class="ui-checkbox" style="margin-left: 10%">
+                                        <label>
+                                        <input type="checkbox">同意条款
+                                    </label>
+                                    </div>
+                                    <button type="submit" class="ui-btn ui-btn-success" style="margin-left: 10%">登录</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="ui-panel">
+                            <div class="ui-panel-body">
+                                <button type="button" id="login-form" class="ui-btn ui-btn-info" onclick="dialogShow()">弹窗登录</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ui-row">
+                    <div class="ui-col ui-pw15">
+                        <div class="ui-panel">
+                            <div class="ui-panel-header ui-border-b">input风格</div>
+                            <div class="ui-panel-body">
+                                <form class="ui-form-horizontal ui-split-form">
+                                    <div class="ui-form-group">
+                                        <label class="ui-label-control ui-col ui-col-10">默认</label>
+                                        <div class="ui-col-90">
+                                            <input type="email" class="ui-input-control" placeholder="默认风格">
+                                        </div>
+                                    </div>
+                                    <div class="ui-form-group">
+                                        <label class="ui-label-control ui-col ui-col-10">提示文字</label>
+                                        <div class="ui-col-90">
+                                            <input type="password" class="ui-input-control" placeholder="带提示文字风格">
+                                            <p class="ui-txt-info">提示文字内容</p>
+                                        </div>
+                                    </div>
+                                    <div class="ui-form-group">
+                                        <label class="ui-label-control ui-col ui-col-10">圆角</label>
+                                        <div class="ui-col-90">
+                                            <input type="email" class="ui-input-control ui-input-round" placeholder="圆角输入框">
+                                        </div>
+                                    </div>
+                                    <div class="ui-form-group">
+                                        <label class="ui-label-control ui-col ui-col-10">不可点击</label>
+                                        <div class="ui-col-90">
+                                            <input type="email" class="ui-input-control" placeholder="不可点击" disabled>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ui-row">
+                    <div class="ui-col ui-pw15">
+                        <div class="ui-panel">
+                            <div class="ui-panel-header ui-border-b">输入框大小</div>
+                            <div class="ui-panel-body">
+                                <form class="ui-form-horizontal ui-split-form">
+                                    <div class="ui-form-group">
+                                        <label class="ui-label-control ui-col ui-col-10">输入框大小</label>
+                                        <div class="ui-col-90">
+                                            <input type="email" class="ui-input-control ui-input-lg ui-mb16" placeholder=".ui-input-lg">
+                                            <input type="email" class="ui-input-control ui-mb16" placeholder="默认大小">
+                                            <input type="email" class="ui-input-control ui-input-sm ui-mb16" placeholder=".ui-input-sm">
+
+                                            <select class="ui-input-control ui-input-lg ui-mb16">
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                        </select>
+                                            <select class="ui-input-control ui-mb16">
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                        </select>
+                                            <select class="ui-input-control ui-input-sm ui-mb16">
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                        </select>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ui-row">
+                    <div class="ui-col ui-pw15">
+                        <div class="ui-panel">
+                            <div class="ui-panel-header ui-border-b">功能型输入框</div>
+                            <div class="ui-panel-body">
+                                <form class="ui-form-horizontal ui-split-form">
+                                    <div class="ui-form-group">
+                                        <label class="ui-label-control ui-col ui-col-10">带图标功能</label>
+                                        <div class="ui-col-90">
+                                            <div class="ui-input-group ui-mb15">
+                                                <span class="ui-input-icon"><i class="icon-denglu"></i></span>
+                                                <input type="text" class="ui-input-control" placeholder="用户名">
+                                            </div>
+                                            <div class="ui-input-group ui-mb15">
+                                                <input type="text" class="ui-input-control" placeholder="用户名">
+                                                <span class="ui-input-icon">@</span>
+                                            </div>
+                                            <div class="ui-input-group ui-mb15">
+                                                <span class="ui-input-icon">@</span>
+                                                <input type="text" class="ui-input-control" placeholder="用户名">
+                                                <span class="ui-input-icon">@</span>
+                                            </div>
+
+                                            <div class="ui-input-group ui-mb15">
+                                                <span class="ui-btn-icon">
+                                                <button type="button" class="ui-btn ui-btn-info">搜索</button>
+                                            </span>
+                                                <input type="text" class="ui-input-control" placeholder="用户名">
+                                            </div>
+                                            <div class="ui-input-group ui-mb15">
+                                                <input type="text" class="ui-input-control" placeholder="用户名">
+                                                <span class="ui-btn-icon">
+                                                <button type="button" class="ui-btn ui-btn-info">搜索</button>
+                                            </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="ui-form-group">
+                                        <label class="ui-label-control ui-col ui-col-10">带图标大小</label>
+                                        <div class="ui-col-90">
+                                            <div class="ui-input-group ui-input-group-lg ui-mb15">
+                                                <span class="ui-input-icon"><i class="icon-denglu"></i></span>
+                                                <input type="text" class="ui-input-control" placeholder="用户名">
+                                            </div>
+                                            <div class="ui-input-group ui-mb15">
+                                                <span class="ui-input-icon"><i class="icon-denglu"></i></span>
+                                                <input type="text" class="ui-input-control" placeholder="用户名">
+                                            </div>
+                                            <div class="ui-input-group ui-input-group-sm ui-mb15">
+                                                <span class="ui-input-icon"><i class="icon-denglu"></i></span>
+                                                <input type="text" class="ui-input-control" placeholder="用户名">
+                                            </div>
+
+                                            <div class="ui-input-group ui-input-group-lg ui-mb15">
+                                                <span class="ui-btn-icon">
+                                                <button type="button" class="ui-btn ui-btn-info">搜索</button>
+                                            </span>
+                                                <input type="text" class="ui-input-control" placeholder="用户名">
+                                            </div>
+                                            <div class="ui-input-group ui-mb15">
+                                                <span class="ui-btn-icon">
+                                                <button type="button" class="ui-btn ui-btn-info">搜索</button>
+                                            </span>
+                                                <input type="text" class="ui-input-control" placeholder="用户名">
+                                            </div>
+                                            <div class="ui-input-group ui-input-group-sm ui-mb15">
+                                                <span class="ui-btn-icon">
+                                                <button type="button" class="ui-btn ui-btn-info">搜索</button>
+                                            </span>
+                                                <input type="text" class="ui-input-control" placeholder="用户名">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ui-row">
+                    <div class="ui-col ui-col-50 ui-pw15">
+                        <div class="ui-panel">
+                            <div class="ui-panel-header ui-border-b">省市区三级联动</div>
+                            <div class="ui-panel-body">
+                                <div class="ui-col-50">
+                                    <input type="text" id="city" class="ui-input-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui-panel">
+                            <div class="ui-panel-header ui-border-b">日期input插件（<a href="https://github.com/owenmead/Pikaday">文档：https://github.com/owenmead/Pikaday</a>）</div>
+                            <div class="ui-panel-body">
+                                <div class="ui-form-group">
+                                    <label class="ui-label-control ui-col ui-col-20">日期</label>
+                                    <div class="ui-col-33">
+                                        <input type="text" id="datepicker" class="ui-input-control ui-mb16">
+                                    </div>
+                                </div>
+                                <div class="ui-form-group">
+                                    <label class="ui-label-control ui-col ui-col-20">多月日期</label>
+                                    <div class="ui-col-33">
+                                        <input type="text" id="datepicker-2months" class="ui-input-control ui-mb16">
+                                    </div>
+                                </div>
+                                <div class="ui-form-group">
+                                    <label class="ui-label-control ui-col ui-col-20">区间日期</label>
+                                    <form class="ui-form-inline ui-mb16">
+                                        <div class="ui-form-group ui-mr6">
+                                            <input type="email" id="datepicker-start" class="ui-input-control" placeholder="起始日">
+                                        </div>
+                                        <div class="ui-form-group">
+                                            <input type="email" id="datepicker-end" class="ui-input-control" placeholder="结束日">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="ui-form-group">
+                                    <label class="ui-label-control ui-col ui-col-20">黑色主题</label>
+                                    <div class="ui-col-33">
+                                        <input type="text" id="datepicker-theme" class="ui-input-control ui-mb16">
+                                    </div>
+                                </div>
+                                <div class="ui-form-group">
+                                    <label class="ui-label-control ui-col ui-col-20">带图标</label>
+                                    <div class="ui-col-33">
+                                        <div class="ui-input-group ui-mb15">
+                                            <input type="text" id="datepicker-icon" class="ui-input-control">
+                                            <span class="ui-input-icon"><i class="icon-tables-copy"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ui-form-group">
+                                    <label class="ui-label-control ui-col ui-col-20">只点击图标</label>
+                                    <div class="ui-col-33">
+                                        <div class="ui-input-group ui-mb15">
+                                            <input type="text" id="datepicker-b" class="ui-input-control" disabled>
+                                            <span class="ui-input-icon" id="datepicker-button"><i class="icon-tables-copy"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ui-col ui-col-50 ui-pw15">
+                        <div class="ui-panel">
+                            <div class="ui-panel-header ui-border-b">自定义CheckBox</div>
+                            <div class="ui-panel-body">
+                                <form action="#" method="get" accept-charset="utf-8">
+                                    <div class="checkboxes">
+                                        <label class="ui-checkbox" for="checkbox-01">
+                                        <input name="sample-checkbox-01" id="checkbox-01" value="1" type="checkbox" class=" ui-check" checked>同意条款
+                                    </label>
+                                        <label class="ui-checkbox" for="checkbox-02">
+                                        <input name="sample-checkbox-02" id="checkbox-02" value="1" type="checkbox" class=" ui-check">更新软件协议
+                                    </label>
+                                        <label class="ui-checkbox" for="checkbox-03">
+                                        <input name="sample-checkbox-03" id="checkbox-03" value="1" type="checkbox" class=" ui-check">自定义 Checkbox
+                                    </label>
+                                    </div>
+                                    <div class="radios">
+                                        <label class="ui-radio ui-radioed" for="radio-01">
+                                        <input name="sample-radio-01" id="radio-01" value="1" type="radio" checked>option A...
+                                    </label>
+                                        <label class="ui-radio ui-radioed" for="radio-02">
+                                        <input name="sample-radio-02" id="radio-02" value="2" type="radio">option B...
+                                    </label>
+                                        <label class="ui-radio ui-radioed" for="radio-03">
+                                        <input name="sample-radio-03" id="radio-03" value="3" type="radio">option C
+                                    </label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="ui-panel">
+                            <div class="ui-panel-header ui-border-b">切换开关</div>
+                            <div class="ui-panel-body">
+                                <div class="ui-col ui-col-50 ui-txt-center">
+                                    <div class="ui-switch">
+                                        <div class="ui-switch-control ui-switch-on">
+                                            <span class="ui-switch-left">ON</span>
+                                            <label></label>
+                                            <span class="ui-switch-right">OFF</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ui-col ui-col-50 ui-txt-center">
+                                    <div class="ui-switch">
+                                        <div class="ui-switch-control ui-switch-off">
+                                            <span class="ui-switch-left"><i class="icon-xuanze"></i></span>
+                                            <label></label>
+                                            <span class="ui-switch-right"><i class="icon-remove"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui-panel-body">
+                                <div class="ui-col ui-col-50 ui-txt-center">
+                                    <div class="ui-switch ui-switch-box">
+                                        <div class="ui-switch-control ui-switch-on">
+                                            <span class="ui-switch-left">ON</span>
+                                            <label></label>
+                                            <span class="ui-switch-right">OFF</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ui-col ui-col-50 ui-txt-center">
+                                    <div class="ui-switch ui-switch-box">
+                                        <div class="ui-switch-control ui-switch-off">
+                                            <span class="ui-switch-left"><i class="icon-xuanze"></i></span>
+                                            <label></label>
+                                            <span class="ui-switch-right"><i class="icon-remove"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ui-panel-body">
+                                <div class="ui-col ui-col-50 ui-txt-center">
+                                    <div class="ui-switch ui-switch-box" disabled>
+                                        <div class="ui-switch-control ui-switch-on">
+                                            <span class="ui-switch-left">ON</span>
+                                            <label></label>
+                                            <span class="ui-switch-right">OFF</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ui-col ui-col-50 ui-txt-center">
+                                    <div class="ui-switch ui-switch-box" disabled>
+                                        <div class="ui-switch-control ui-switch-off">
+                                            <span class="ui-switch-left"><i class="icon-xuanze"></i></span>
+                                            <label></label>
+                                            <span class="ui-switch-right"><i class="icon-remove"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <div id="modal-dialog" class="modal-dialog">
+            <form class="ui-form">
+                <div class="ui-form-group">
+                    <label class="ui-mb4">账户</label>
+                    <input type="email" class="ui-input-control" placeholder="请输入账户">
+                </div>
+                <div class="ui-form-group">
+                    <label class="ui-mb4">密码</label>
+                    <input type="email" class="ui-input-control" placeholder="请输入密码">
+                </div>
+                <div class="ui-form-group">
+                    <label class="ui-mb4">上传文件</label>
+                    <input type="file">
+                </div>
+
+                <div class="ui-checkbox">
+                    <label>
+                    <input type="checkbox">同意条款
+                </label>
+                </div>
+                <button type="submit" class="ui-btn ui-btn-info">登录</button>
+            </form>
+            <div class="modal-dialog-clear"></div>
+        </div>
+
+    </section>
+</body>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="./assets/lib/artdialog/dialog.js"></script>
+<script src="./assets/js/mgui.js"></script>
+
+<!--日期格式化 文档 -》 http://momentjs.cn/ -->
+<script src="./assets/lib/pikaday/moment.min.js"></script>
+<!--日期插件-->
+<script src="./assets/lib/pikaday/Pikaday.js"></script>
+
+<!--地区三级联想-->
+<script src="./assets/lib/cityset/cityset.js"></script>
+<script src="./assets/js/cityJson.js"></script>
+
+<!--日期插件 私有js-->
+<script src="./assets/js/pikaday-script.js"></script>
+
+<script>
+    $(function() {
+        $(".radios").radioSelect({});
+    });
+
+    $("#city").click(function(e) {
+        SelCity(this, e);
+    });
+</script>
+
+</html>

@@ -1,0 +1,15 @@
+@import
+
+    "../core/mixin",
+    "../core/setting";
+
+@font-face {font-family: "iconfont";
+    src: url(../fonts/iconfont-full.ttf) format('truetype');
+}
+.icon,[class^="icon-"] {
+    @include icon;
+}
+
+.icon-top:before { content: "\e600"; }
+.icon-dui:before { content: "\e604"; }
+.icon-up:before { content: "\e651"; }

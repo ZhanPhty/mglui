@@ -1,0 +1,79 @@
+@import 
+    "../core/mixin",
+    "../core/setting";
+
+.ui-table {
+    width: 100%;
+    max-width: 100%;
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    thead {
+        & > tr {
+            & > th {
+                border-top: 0;
+                vertical-align: bottom;
+                border-bottom: 2px solid #ddd;
+                padding: $table-padding $wrap-padding;
+                text-align: left;
+            }
+        }
+    }
+
+    tbody {
+        & > tr {
+            &:hover,
+            &.active {
+                background-color: #f7f7f7;
+            }
+            & > td {
+                vertical-align: top;
+                border-top: 1px solid #ddd;
+                padding: $table-padding $wrap-padding;
+                color: #666;
+            }
+        }
+    }
+}
+
+.ui-table-stripe {
+    & > tbody {
+        & > tr {
+            &:nth-child(odd) {
+                background-color: #fafafa;
+            }
+        }
+    }
+}
+
+.ui-table-border {
+    border: 1px solid #ddd;
+    
+    thead {
+        & > tr {
+            & > th {
+                border: 1px solid #ddd;
+                border-bottom-width: 2px;
+            }
+        }
+    }
+
+    tbody {
+        & > tr {
+            & > td {
+                border: 1px solid #ddd;
+            }
+        }
+    }
+}
+
+.ui-table-hover {
+    tbody {
+        & > tr {
+            &:hover {
+                background-color: #f8f8f8;
+            }
+        }
+    }
+}

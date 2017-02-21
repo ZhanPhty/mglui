@@ -1,0 +1,317 @@
+@import 
+    "../core/mixin",
+    "../core/setting";
+
+
+::-webkit-input-placeholder {
+    color: $colorPlaceholder;
+}
+
+/**
+ * 文字
+ */
+
+h1 {
+    font-size: $font-size-h1;
+}
+
+h2 {
+    font-size: $font-size-title-lg;
+}
+
+h3,
+h4 {
+    font-size: $font-size-title;
+}
+
+h5,
+.ui-txt-sub {
+    font-size: $font-size-sub;
+    font-weight: 400;
+}
+
+h6,
+.ui-txt-tips {
+    font-size: $font-size-tips;
+}
+
+.ui-txt-default {
+    color: $colorText;
+}
+
+.ui-txt-white {
+    color: white;
+}
+
+.ui-txt-info {
+    color: $txt-info;
+}
+
+.ui-txt-muted {
+    color: $txt-muted;
+}
+
+.ui-txt-warning,
+.ui-txt-red {
+    color: $txt-warning;
+}
+
+.ui-txt-feeds {
+    color: $txt-feeds;
+}
+
+
+/* 同em */
+.ui-txt-justify {
+    text-align: justify;
+}
+
+.ui-txt-justify-one {
+    text-align: justify;
+    overflow: hidden;
+    height: 24px;
+}
+
+.ui-txt-justify-one:after {
+    display: inline-block;
+    content: '';
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.ui-txt-left {
+    text-align: left;
+}
+
+.ui-txt-right {
+    text-align: right;
+}
+
+.ui-txt-center {
+    text-align: center;
+}
+
+//徽章
+.ui-badge {
+    display: inline-block;
+    min-width: 10px;
+    padding: 2px 5px;
+    font-size: $baseFontSize - 1;
+    line-height: 1;
+    color: $white;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    background-color: $grayDark;
+    border-radius: $maxRadius;
+
+    &.bg-important {
+        background: $red;
+    }
+
+    &.bg-success {
+        background: $green;
+    }
+
+    &.bg-warning {
+        background: $orange;
+    }
+}
+
+//面包屑
+.ui-breadcrumb {
+    padding: 8px 15px;
+    list-style: none;
+    background-color: $white;
+    border-radius: $borderRadiusBase;
+
+    & > li {
+        cursor: pointer;
+        display: inline-block;
+
+        & + li:before {
+            padding: 0 5px;
+            color: #ccc;
+            content: "/\00a0";
+        }
+    }
+
+    i {
+        font-size: $baseFontSize - 1;
+        vertical-align: middle;
+    }
+}
+
+.ui-alert {
+    padding: $alert-padding;
+    border: 1px solid transparent;
+    border-radius: $borderRadiusBase;
+
+    .ui-close {
+        float: right;
+        font-weight: bold;
+        line-height: 1;
+        color: #000;
+        text-shadow: 0 1px 0 #fff;
+        opacity: .3;
+        padding: 0;
+        cursor: pointer;
+        background: transparent;
+        border: 0;
+        -webkit-appearance: none;
+    }
+
+    h2 {
+        margin-bottom: 12px;
+        line-height: 1.2;
+
+        i {
+            color: darken($green, 20%);
+            font-weight: bold;
+            font-size: 16px;
+        }
+    }
+}
+
+.ui-alert-success {
+    color: darken($green, 20%);
+    background-color: lighten($green, 36%);
+}
+
+.ui-alert-danger {
+    color: darken($red, 20%);
+    background-color: lighten($red, 26%);
+
+    h2 i {
+        color: darken($red, 20%);
+    }
+}
+
+.ui-alert-info {
+    color: darken($blue, 20%);
+    background-color: lighten($blue, 30%);
+
+    h2 i {
+        color: darken($blue, 20%);
+    }
+}
+
+.ui-alert-warning {
+    color: darken($orange, 18%);
+    background-color: lighten($orange, 36%);
+
+    h2 i {
+        color: darken($orange, 18%);
+    }
+}
+
+.ui-pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: $borderRadiusBase;
+
+    & > li {
+        display: inline;
+        float: left;
+
+        &.ui-txt-page {
+            margin-left: 10px;
+
+            input[type="text"] {
+                padding: 8px 4px;
+                width: 48px;
+                text-align: center;
+                font-size: 15px;
+            }
+        }
+
+        &.ui-count {
+            margin-right: 10px;
+        }
+
+        & > a {
+            position: relative;
+            float: left;
+            padding: 8px 16px;
+            margin-left: -1px;
+            font-size: $baseFontSize + 1;
+            line-height: 1.4;
+            text-decoration: none;
+            background-color: $white;
+            border: 1px solid $gray;
+
+            &:hover {
+                background-color: darken($white, 6%);
+            }
+        }
+
+        &:first-child {
+            & > a {
+                border-top-left-radius: $borderRadiusBase - 2;
+                border-bottom-left-radius: $borderRadiusBase - 2;
+            }
+        }
+
+        &:last-child {
+            & > a {
+                border-top-right-radius: $borderRadiusBase - 2;
+                border-bottom-right-radius: $borderRadiusBase - 2;
+            }
+        }
+    }
+}
+
+.ui-pagination-lg {
+    & > li {
+        & > a {
+            font-size: $baseFontSize + 5;
+        }
+    }
+}
+
+.ui-pagination-sm {
+    & > li {
+        & > a {
+            padding: 6px 12px;
+            font-size: $baseFontSize - 1;
+        }
+    }
+}
+
+//进步条
+.ui-progress {
+    height: 18px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    border-radius: 1px;
+}
+
+.ui-progress-bar {
+    float: left;
+    width: 0;
+    height: 100%;
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    background-color: #428bca;
+
+    transition: width .6s ease;
+}
+
+.ui-progress-sm {
+    height: 12px;
+}
+
+.ui-progress-round {
+    @extend .ui-btn-round;
+}

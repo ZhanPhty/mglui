@@ -1,0 +1,310 @@
+@import 
+    "../core/mixin",
+    "../core/setting";
+
+.ui-btn {
+    display: inline-block;
+    padding: $btn-padding-h $btn-padding-w;
+    margin-bottom: 0;
+    font-size: $baseFontSize + 1;
+    font-weight: normal;
+    line-height: 1.4;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: $borderRadiusBase;
+    user-select: none;
+
+    i {
+        color: $white;
+        padding-left: 0;
+    }
+}
+
+.ui-btn-default {
+    background-color: $btn-color-default;
+    border-color: $btn-color-default;
+    color: $white;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        background-color: darken($btn-color-default, 7%);
+        border-color: darken($btn-color-default, 7%);
+    }
+
+    &.ui-btn-shadow {
+        box-shadow: 0 $btn-shadow darken($btn-color-default, 8%);
+        margin-bottom: $btn-shadow + 1;
+    }
+}
+
+.ui-btn-primary {
+    background-color: $btn-color-primary;
+    border-color: $btn-color-primary;
+    color: $white;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        background-color: darken($btn-color-primary, 7%);
+        border-color: darken($btn-color-primary, 7%);
+    }
+
+    &.ui-btn-shadow {
+        box-shadow: 0 $btn-shadow darken($btn-color-primary, 8%);
+        margin-bottom: $btn-shadow + 1;
+    }
+}
+
+.ui-btn-success {
+    background-color: $btn-color-success;
+    border-color: $btn-color-success;
+    color: $white;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        background-color: darken($btn-color-success, 7%);
+        border-color: darken($btn-color-success, 7%);
+    }
+
+    &.ui-btn-shadow {
+        box-shadow: 0 $btn-shadow darken($btn-color-success, 8%);
+        margin-bottom: $btn-shadow + 1;
+    }
+}
+
+.ui-btn-info {
+    background-color: $btn-color-info;
+    border-color: $btn-color-info;
+    color: $white;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        background-color: darken($btn-color-info, 10%);
+        border-color: darken($btn-color-info, 10%);
+    }
+
+    &.ui-btn-shadow {
+        box-shadow: 0 $btn-shadow darken($btn-color-info, 12%);
+        margin-bottom: $btn-shadow + 1;
+    }
+}
+
+.ui-btn-warning {
+    background-color: $btn-color-warning;
+    border-color: $btn-color-warning;
+    color: $white;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        background-color: darken($btn-color-warning, 3%);
+        border-color: darken($btn-color-warning, 3%);
+    }
+
+    &.ui-btn-shadow {
+        box-shadow: 0 $btn-shadow darken($btn-color-warning, 6%);
+        margin-bottom: $btn-shadow + 1;
+    }
+}
+
+.ui-btn-danger {
+    background-color: $btn-color-danger;
+    border-color: $btn-color-danger;
+    color: $white;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        background-color: darken($btn-color-danger, 7%);
+        border-color: darken($btn-color-danger, 7%);
+    }
+
+    &.ui-btn-shadow {
+        box-shadow: 0 $btn-shadow darken($btn-color-danger, 8%);
+        margin-bottom: $btn-shadow + 1;
+    }
+}
+
+.ui-btn-white {
+    background-clip: padding-box;
+    background-color: $white;
+    border-color: rgba(150, 160, 180, 0.3);
+}
+
+.ui-btn-round {
+    border-radius: $maxRadius;
+}
+
+.ui-caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 3px;
+    vertical-align: middle;
+    border-top: 5px solid $white;
+    border-right: 4px solid transparent;
+    border-bottom: 0 dotted;
+    border-left: 4px solid transparent;
+    content: "";
+}
+
+.ui-btn-lg {
+    padding: $btn-padding-h + 4 $btn-padding-w + 4;
+    font-size: $baseFontSize + 5;
+    line-height: 1.3;
+    border-radius: $baseRadius;
+
+    .ui-caret {
+        border-top: 6px solid $white;
+        border-right: 5px solid transparent;
+        border-bottom: 0 dotted;
+        border-left: 5px solid transparent;
+    }
+}
+
+.ui-btn-sm {
+    padding: $btn-padding-h - 2 $btn-padding-w - 2;
+}
+
+.ui-btn-ex {
+    padding: $btn-padding-h - 4 $btn-padding-w - 4;
+    font-size: $baseFontSize - 1;
+    line-height: 1.2;
+    border-radius: $smallRadius;
+}
+
+.ui-btn-block {
+    display: block;
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.ui-btn-block+.ui-btn-block {
+    margin-top: 5px;
+}
+
+.ui-btn-group {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+
+    & > .ui-btn {
+        position: relative;
+        float: left;
+
+        &:not(:first-child):not(:last-child) {
+            border-radius: 0;
+        }
+
+        &:first-child {
+            margin-left: 0;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-right: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border-left: 0;
+        }
+    }
+}
+
+.btn-group-vertical {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+
+    & > .ui-btn {
+        display: block;
+        position: relative;
+        float: none;
+        width: 100%;
+        max-width: 100%;
+
+        &:not(:first-child):not(:last-child) {
+            border-radius: 0;
+        }
+
+        &:first-child {
+            margin-bottom: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+            border-bottom: 0;
+        }
+
+        &:last-child {
+            margin-top: 0;
+            border-top-right-radius: 0;
+            border-top-left-radius: 0;
+            border-top: 0;
+        }
+    }
+}
+
+.ui-btn-group-sm {
+
+    & > .ui-btn {
+        padding: $btn-padding-h - 1 $btn-padding-w - 1;
+        font-size: 12px;
+    }
+}
+
+.ui-dropbox {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+
+    &.open {
+        & > .ui-drop-menu {
+            display: block;
+        }
+    }
+
+    & > .ui-drop-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: $zindexDropdown;
+        float: left;
+        min-width: $btn-min-width;
+        padding: 5px 0;
+        margin: 2px 0 0;
+        font-size: $baseFontSize + 1;
+        list-style: none;
+        background-color: $white;
+        border: 1px solid #ccc;
+        border-radius: $baseRadius;
+        box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1);
+        background-clip: padding-box;
+
+        & > li > a{
+            display: block;
+            padding: 8px $baseGap;
+            clear: both;
+            font-weight: normal;
+            line-height: 1.4;
+            white-space: nowrap;
+
+            &:hover {
+                background-color: darken($white, 5%)
+            }
+        }
+    }
+}

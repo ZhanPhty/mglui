@@ -1,0 +1,34 @@
+@import
+
+    "../core/mixin",
+    "../core/setting";
+
+/* 箭头链接 */
+.ui-arrowlink{
+    position: relative;
+    &:before{
+        @include arrowlink;
+    }
+}
+.ui-arrowlink.active{
+    background: $active-bg;
+}
+
+.ui-arrowadd {
+    position: relative;
+    &:after{
+        @include icon;
+        font-size: 18px;
+        content: $icon-arrowadd;
+        position: absolute;
+        right: -1px;
+        top: 50%;
+        margin-top: -12px;
+    }
+
+    &:hover {
+        &:after{
+            color: $white;
+        }
+    }
+}
