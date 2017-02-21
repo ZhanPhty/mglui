@@ -1,6 +1,17 @@
 
 # MGUI
 
+## 安装gulp
+
+安装gulp构建及插件
+
+`npm install`
+
+启动gulp
+> sass编译使用的是node-sass，请安装node-sass
+
+`gulp`
+
 
 ## 目录结构
 - src/ 
